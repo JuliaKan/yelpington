@@ -16,7 +16,9 @@
 
 
     <script>
-            fetch('muddy-waters.json')
+            let params = new URLSearchParams(document.location.search.slice(1));
+            let fileName = params.get("name")+ ".json";
+            fetch(fileName)
           .then(function(response) {
             return response.json();
           })
