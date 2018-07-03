@@ -1,4 +1,4 @@
-{ 
+{
     "id": "muddy-waters",
     "name": "Muddy Waters Café",
     "address": "184 Main Street",
@@ -6,5 +6,4 @@
     "notes": [
         "Iced Green Tea is pricey ($3) but very refreshing!"
     ]
-
 }
