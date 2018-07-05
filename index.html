@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <style>
-    
-    </style>
-    
+  <style>
+  </style>
+
 </head>
 
 
 <body>
-    <h1 id="name"></h1>
-    <h2 id="address"></h2>
-    <h3 id="phoneNumber"></h3>
-    <h4 id="notes"></h4>
+  <h1 id="name"></h1>
+  <h2 id="address"></h2>
+  <h3 id="phoneNumber"></h3>
+  <h4 id="notes"></h4>
 
 
-    <script>
-            let params = new URLSearchParams(document.location.search.slice(1));
-            let fileName = params.get("name");
-            console.log (fileName);
-            fetch(fileName)
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(myJson) {
-              document.getElementById("name").textContent = myJson.name
-              document.getElementById("address").textContent = myJson.address
-              document.getElementById("phoneNumber").textContent = myJson.phonenumber
-              document.getElementById("notes").textContent = myJson.notes
-        
-        
-        
-            console.log(myJson);
-          });
-        </script>
+  <script>
+    // Access query parameters: "/?name=muddy-waters", for instance.
+    let params = new URLSearchParams(document.location.search.slice(1));
+    // In this particular case, by using the ID "name" instead of a specific filename, you can put the name of any JSON in the URL and access it - brilliant!
+    let fileName = params.get("name");
+    console.log(fileName);
+    fetch(fileName)
+      .then(function (response) {
+        // Actually "prints" the words onto the page!
+        return response.json();
+      })
+      .then(function (myJson) {
+        // 
+        document.getElementById("name").textContent = myJson.name
+        document.getElementById("address").textContent = myJson.address
+        document.getElementById("phoneNumber").textContent = myJson.phonenumber
+        document.getElementById("notes").textContent = myJson.notes
+
+
+
+        console.log(myJson);
+      });
+  </script>
 
 </body>
 
