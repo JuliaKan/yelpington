@@ -16,9 +16,15 @@
     <h2 id="address"></h2>
     <h3 id="phoneNumber"></h3>
     <h4 id="notes"></h4>
-    <iframe id="boundingbox" width="500px" height="450px">
     </iframe>
   </div>
+
+  <iframe id="map"
+  title="map"
+  width="300"
+  height="200"
+  src="">
+</iframe>
 
  
 
@@ -42,12 +48,14 @@
         document.getElementById("address").textContent = myJson.address
         document.getElementById("phoneNumber").textContent = myJson.phonenumber
         document.getElementById("notes").textContent = myJson.notes
+        document.getElementById("map").src= "https://nominatim.openstreetmap.org/search.php/?q=" + myJson.address
         
-        let apiUrl = "https://nominatim.openstreetmap.org/search/?q=" + myJson.address
+        let apiUrl = "https://nominatim.openstreetmap.org/search.php/?q=" + myJson.address
 
         fetch(apiUrl).then(function(response){
           let package = response.json();
           console.log(package);
+          //the package needs to be ONLY the address.
 
 
         }) 
