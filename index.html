@@ -20,30 +20,39 @@
     </iframe>
   </div>
 
-  <!-- <div id="map">
-    <iframe id="inlineFrameExample" title="Inline Frame Example" width="300" height="200" src="https://www.openstreetmap.org/export/embed.html?bbox=-73.2130900,44.4749000,-73.2102500,44.4772200&layer=mapnik">
-    </iframe>
-  </div> -->
+ 
 
   <script>
     // Access query parameters: "/?name=muddy-waters", for instance.
     let params = new URLSearchParams(document.location.search.slice(1));
     // In this particular case, by using the ID "name" instead of a specific filename, you can put the name of any JSON in the URL and access it - brilliant!
-    let fileName = params.get("name");
+    let fileName = params.get("name")+".json";
     console.log(fileName);
+    
+    //fetch().then().then()
+    //the fetch returns a promise. when that promise resolves/finishes, it pass the promise to the .then. the promise can be successful thing or error.
     fetch(fileName)
       .then(function (response) {
-        // Actually "prints" the words onto the page!
-        return response.json();
+        // actually converts string into javascript object.
+        return response.json();//text to object!!
       })
       .then(function (myJson) {
-        // 
+        // telling the DOM exactly where to put a piece from the JS Object. assigning name value to name id.
         document.getElementById("name").textContent = myJson.name
         document.getElementById("address").textContent = myJson.address
         document.getElementById("phoneNumber").textContent = myJson.phonenumber
         document.getElementById("notes").textContent = myJson.notes
-        document.getElementById("boundingbox").textContent = myJson.boundingbox
         
+        let apiUrl = "https://nominatim.openstreetmap.org/search/?q=" + myJson.address
+
+        fetch(apiUrl).then(function(response){
+          let package = response.json();
+          console.log(package);
+
+
+        }) 
+
+
 
 
         console.log(myJson);
