@@ -1,9 +1,14 @@
 body {
     background-color: white;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
 }
 #mainText{
     font-family: 'Quicksand', sans-serif;
-    display:flex;
-    justify-content: center;
-    flex-direction:column;
+}
+
+#map {
+    display: flex;
+
 }

@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="muddy-waters.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <style>
   </style>
 
@@ -9,11 +11,19 @@
 
 
 <body>
-  <h1 id="name"></h1>
-  <h2 id="address"></h2>
-  <h3 id="phoneNumber"></h3>
-  <h4 id="notes"></h4>
+  <div id="mainText">
+    <h1 id="name"></h1>
+    <h2 id="address"></h2>
+    <h3 id="phoneNumber"></h3>
+    <h4 id="notes"></h4>
+    <iframe id="boundingbox" width="500px" height="450px">
+    </iframe>
+  </div>
 
+  <!-- <div id="map">
+    <iframe id="inlineFrameExample" title="Inline Frame Example" width="300" height="200" src="https://www.openstreetmap.org/export/embed.html?bbox=-73.2130900,44.4749000,-73.2102500,44.4772200&layer=mapnik">
+    </iframe>
+  </div> -->
 
   <script>
     // Access query parameters: "/?name=muddy-waters", for instance.
@@ -32,7 +42,8 @@
         document.getElementById("address").textContent = myJson.address
         document.getElementById("phoneNumber").textContent = myJson.phonenumber
         document.getElementById("notes").textContent = myJson.notes
-
+        document.getElementById("boundingbox").textContent = myJson.boundingbox
+        
 
 
         console.log(myJson);
