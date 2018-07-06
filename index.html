@@ -47,7 +47,7 @@
         document.getElementById("address").textContent = myJson.address
         document.getElementById("phoneNumber").textContent = myJson.phonenumber
         document.getElementById("notes").textContent = myJson.notes
-        // document.getElementById("map").src= "https://nominatim.openstreetmap.org/search?q=" + myJson.address + "&format=json"
+        
         
         let apiUrl = "https://nominatim.openstreetmap.org/search?q=" + myJson.address + "&format=json"
 
@@ -65,9 +65,17 @@
 
         }).then(function(package){
          let nominatimResponse = package[0] 
-         
-
+         let b1 = nominatimResponse.boundingbox[0]
+         let b2 = nominatimResponse.boundingbox[1]
+         let b3 = nominatimResponse.boundingbox[2]
+         let b4 = nominatimResponse.boundingbox[3]
+        
+        let openStreetMapsUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${b3}%2C${b1}%2C${b4}%2C${b2}`
+          document.getElementById("map").src=openStreetMapsUrl
+          //}&amp;layer=mapnik&amp;marker=44.4760630180706%2C-73.21197599172592
+          console.log (openStreetMapsUrl)
          //find documentation for map embed
+         //"https://www.openstreetmap.org/export/embed.html?bbox=-73.21300327777864%2C44.475507992540564%2C-73.21094870567323%2C44.476618038321554&amp;layer=mapnik&amp;marker=44.4760630180706%2C-73.21197599172592"
         })
 
 
