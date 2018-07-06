@@ -16,7 +16,6 @@
     <h2 id="address"></h2>
     <h3 id="phoneNumber"></h3>
     <h4 id="notes"></h4>
-    </iframe>
   </div>
 
   <iframe id="map"
@@ -48,17 +47,28 @@
         document.getElementById("address").textContent = myJson.address
         document.getElementById("phoneNumber").textContent = myJson.phonenumber
         document.getElementById("notes").textContent = myJson.notes
-        document.getElementById("map").src= "https://nominatim.openstreetmap.org/search.php/?q=" + myJson.address
+        // document.getElementById("map").src= "https://nominatim.openstreetmap.org/search?q=" + myJson.address + "&format=json"
         
-        let apiUrl = "https://nominatim.openstreetmap.org/search.php/?q=" + myJson.address
+        let apiUrl = "https://nominatim.openstreetmap.org/search?q=" + myJson.address + "&format=json"
 
         fetch(apiUrl).then(function(response){
-          let package = response.json();
-          console.log(package);
+          return response.json()
+          //let package = response.json();
+          //console.log(package);
+
+          // let boundingBoxHolder = package[0].boundingbox
+          //return package[0].boundingbox
+          //console.log(boundingBoxHolder)
+
           //the package needs to be ONLY the address.
 
 
-        }) 
+        }).then(function(package){
+         let nominatimResponse = package[0] 
+         
+
+         //find documentation for map embed
+        })
 
 
 
