@@ -72,9 +72,12 @@
         
         let openStreetMapsUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${b3}%2C${b1}%2C${b4}%2C${b2}`
           document.getElementById("map").src=openStreetMapsUrl
+
+          //add marker using coordinate variable from the line below here:
           //}&amp;layer=mapnik&amp;marker=44.4760630180706%2C-73.21197599172592
           console.log (openStreetMapsUrl)
-         //find documentation for map embed
+
+         //this is documentation for map embed
          //"https://www.openstreetmap.org/export/embed.html?bbox=-73.21300327777864%2C44.475507992540564%2C-73.21094870567323%2C44.476618038321554&amp;layer=mapnik&amp;marker=44.4760630180706%2C-73.21197599172592"
         })
 

@@ -1,14 +1,19 @@
 body {
+    background-image:url("appetizerbackground.jpg");
+    background-size:cover;
+    
     background-color: white;
     display: flex;
     align-content: center;
     flex-direction: column;
-}
-#mainText{
     font-family: 'Quicksand', sans-serif;
+    color:white;
+    float:right;
+    margin-right:10%;
+    text-align:center;
+
 }
-
-#map {
-    display: flex;
-
+#map{
+    margin-left:15%;
+    border:red;
 }
