@@ -1,8 +1,6 @@
 body {
     background-image:url("appetizerbackground.jpg");
     background-size:cover;
-    
-    background-color: white;
     display: flex;
     align-content: center;
     flex-direction: column;
@@ -13,7 +11,7 @@ body {
     text-align:center;
 
 }
-#map{
+iframe{
     margin-left:15%;
-    border:red;
+    border-radius:5px;
 }
