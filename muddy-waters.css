@@ -26,5 +26,11 @@ ul{
     list-style-type: none;
 
 }
+#mapit{
+    display:flex;
+    justify-content: flex-end;
+    margin-right:80px;
+    float:right;
+}
 
 /* burger png source:https://pixabay.com/en/burger-fast-food-food-2645563/ */
