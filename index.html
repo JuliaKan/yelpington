@@ -12,27 +12,28 @@
 
 
 <body>
-  <div>
+   
+  <div id="headline">
     <h1>It's always lunchtime at Yelpington!</h1>
     <h2>Where would you like to eat?</h2>
   </div>
-  <div id="info">
-    <ul>
-        <li><a href="/?name=asiana-noodle-house">Asiana Noodle House</a></li>
-        <li><a href="/?name=kountry-kart-deli">Kountry Kart Deli</a></li>
-        <li><a href="/?name=?name=mr-mikes">Mr. Mikes</a></li>
-        <li><a href="/?name=new-moon">New Moon</a></li>
-        <li><a href="/?name=pizzeria-veritas">Pizzeria Veritas</a></li>
-        <li><a href="/?name=red-onion">Red Onion</a></li>
-        <li><a href="/?name=splash-at-the-boathouse">Splash at the Boathouse</a></li>
-        <li><a href="/?name=thai-Dishes">Thai Dishes</a></li>
-        <li><a href="/?name=the-archives">The Archives</a></li>
-        <li><a href="/?name=city-market">City Market</a></li>
-
-
+  <div class="dropdown">
+      <button onclick="dropDownMenu()" class="dropbtn">Choose a Restaurant</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="/?name=asiana-noodle-house">Asiana Noodle House</a>
+        <a href="/?name=kountry-kart-deli">Kountry Kart Deli</a>
+        <a href="/?name=?name=mr-mikes">Mr. Mikes</a>
+        <a href="/?name=new-moon">New Moon</a>
+        <a href="/?name=pizzeria-veritas">Pizzeria Veritas</a>
+        <a href="/?name=red-onion">Red Onion</a>
+        <a href="/?name=splash-at-the-boathouse">Splash at the Boathouse</a>
+        <a href="/?name=thai-Dishes">Thai Dishes</a>
+        <a href="?name=the-archives">The Archives</a>
+        <a href="/?name=city-market">City Market</a>
     
-  </ul>
-  </div>
+      </div>
+    </div>
+  
 
 
   <div id="mainText">
@@ -112,6 +113,28 @@
 
         console.log(myJson);
       });
+
+
+      //dropdown menu
+     
+function dropDownMenu() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
   </script>
 
 </body>
