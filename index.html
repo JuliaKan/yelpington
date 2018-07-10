@@ -5,20 +5,21 @@
   <link rel="stylesheet" href="muddy-waters.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="icon" type="image/png" href="burger.png">
-  <style>
-  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 
 
 <body>
-   
+   <div class="wrappingHeadline">
   <div id="headline">
     <h1>It's always lunchtime at Yelpington!</h1>
     <h2>Where would you like to eat?</h2>
   </div>
-  <div class="dropdown">
+</div>
+  <div class="dropdown wrappingButton">
       <button onclick="dropDownMenu()" class="dropbtn">Choose a Restaurant</button>
+    
       <div id="myDropdown" class="dropdown-content">
         <a href="/?name=asiana-noodle-house">Asiana Noodle House</a>
         <a href="/?name=kountry-kart-deli">Kountry Kart Deli</a>
@@ -34,14 +35,16 @@
       </div>
     </div>
   
+  
 
-
+<div class="wrappingMainText">
   <div id="mainText">
     <h1 id="name"></h1>
     <h2 id="address"></h2>
     <h3 id="phoneNumber"></h3>
     <h4 id="notes"></h4>
   </div>
+</div>
 
   <div id="mapit">
   <iframe id="map"
@@ -110,8 +113,9 @@
 
 
 
-
+        showHiddenDiv();
         console.log(myJson);
+        
       });
 
 
@@ -134,6 +138,13 @@ window.onclick = function(event) {
       }
     }
   }
+}
+
+function showHiddenDiv(){
+  $('#mainText').show()
+
+
+
 }
   </script>
 
